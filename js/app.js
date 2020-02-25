@@ -4,7 +4,7 @@ function showSpecialNum() {
     let result = "";
     while (count < numbers) {
         if (checkPrime(count)) {
-            result = result + count + ", " ;
+            result = result + count + ", ";
             count++;
         }
         count++;
@@ -12,21 +12,21 @@ function showSpecialNum() {
     document.getElementById('num-display').innerHTML = result;
 }
 
-function checkMod (number) {
+function checkMod(number) {
     return (number % 2 === 0);
 }
 
 function checkPrime(number) {
     let index = 2;
-    if (number === 4) {
-        return false;
+    if (number === 2 || number === 3) {
+        return true;
     } else {
-        while (index < number/2) {
+        while (index <= Math.sqrt(number)) {
             if (number % index === 0) {
                 return false;
             }
-            index++;
+            index = index + 1;
         }
-        return true;
     }
+    return true;
 }
