@@ -1,31 +1,22 @@
 function showSpecialNum() {
-    let count = 0;
+    let count = 1;
     let numbers = +document.getElementById('num-input').value;
-    let result = "";
-    while (count < numbers) {
-        if (checkPrime(count)) {
-            result = result + count + ", ";
+    let result = '';
+    let index = 1;
+    for (index; count <= numbers;) {
+        if (checkPrime(index)) {
+            result = result + index + ", ";
             count++;
         }
-        count++;
+        index++;
     }
     document.getElementById('num-display').innerHTML = result;
 }
 
-function checkMod(number) {
-    return (number % 2 === 0);
-}
-
 function checkPrime(number) {
-    let index = 2;
-    if (number === 2 || number === 3) {
-        return true;
-    } else {
-        while (index <= Math.sqrt(number)) {
-            if (number % index === 0) {
-                return false;
-            }
-            index = index + 1;
+    for (let i = 2; i <= number/2; i++) {
+        if (number % i === 0) {
+            return false;
         }
     }
     return true;
