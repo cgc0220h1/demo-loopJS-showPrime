@@ -1,4 +1,4 @@
-function showSpecialNum() {
+function showPrimeNum() {
     let count = 1;
     let numbers = +document.getElementById('num-input').value;
     let result = [];
@@ -14,7 +14,7 @@ function showSpecialNum() {
 }
 
 function checkPrime(number) {
-    for (let i = 2; i <= number/Math.sqrt(number); i++) {
+    for (let i = 2; i <= Math.sqrt(number); i++) {
         if (number % i === 0) {
             return false;
         }
